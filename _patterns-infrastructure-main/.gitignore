@@ -1,0 +1,12 @@
+.idea
+node_modules
+cdk.out
+.env
+lib/**/*d.ts
+lib/enums/construct_ids.enum.d.ts
+lib/functions/config.d.ts
+lib/**/*.js
+*.d.ts
+*.tgz
+tsconfig.*
+

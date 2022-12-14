@@ -1,0 +1,28 @@
+{
+    "rules": [
+        {
+            "rule-type": "transformation",
+            "rule-id": "579807868",
+            "rule-name": "579807868",
+            "rule-target": "table",
+            "object-locator": {
+                "schema-name": "forge",
+                "table-name": "investment_aggregation"
+            },
+            "rule-action": "rename",
+            "value": "EIE-PubSub-stage-Investments",
+            "old-value": null
+        },
+        {
+            "rule-type": "selection",
+            "rule-id": "579714395",
+            "rule-name": "579714395",
+            "object-locator": {
+                "schema-name": "forge",
+                "table-name": "investment_aggregation"
+            },
+            "rule-action": "include",
+            "filters": []
+        }
+    ]
+}

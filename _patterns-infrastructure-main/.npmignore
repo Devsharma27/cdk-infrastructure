@@ -1,0 +1,14 @@
+*.ts
+!*.d.ts
+
+# CDK asset staging directory
+.cdk.staging
+cdk.out
+
+bin
+node_modules
+test
+.idea
+jest.config.js
+cdk.json
+.github

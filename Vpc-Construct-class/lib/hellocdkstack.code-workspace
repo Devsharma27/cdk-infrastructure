@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../aws-vpc-builder-cdk/config"
+		}
+	],
+	"settings": {}
+}

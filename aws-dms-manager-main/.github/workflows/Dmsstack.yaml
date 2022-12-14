@@ -1,0 +1,51 @@
+name: DMS Stack
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Choose the Env'
+        required: true
+        default: ''
+        type: choice
+        options:
+        - dev
+        - stage
+        - prod
+
+env:
+   SOURCE_ENDPOINT_PASSWORD: ${{ secrets.SOURCE_ENDPOINT_PASSWORD }}
+   SOURCE_ENDPOINT_USERNAME: ${{ secrets.SOURCE_ENDPOINT_USERNAME }}
+   SOURCE_ENDPOINT_SERVERNAME: ${{ secrets.SOURCE_ENDPOINT_SERVERNAME }}
+   
+permissions:
+  id-token: write
+  contents: read
+  
+jobs:
+  DeployStacks:
+
+    environment:
+      name: ${{ github.event.inputs.environment }}
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+
+      - name: Install Dependiencies
+        run: npm install -g aws-cdk
+
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: ${{ secrets.BRANDS_AWS_OIDC_ROLE_ARN }}
+          aws-region: eu-central-1
+
+      - name: Deploy
+        run: npm install && cdk deploy --all --require-approval never -c env=${{ github.event.inputs.environment }}

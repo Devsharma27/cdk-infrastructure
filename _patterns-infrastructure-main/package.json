@@ -1,0 +1,49 @@
+{
+  "name": "@exporo/patterns-infrastructure",
+  "version": "0.11.0",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "tsc -p .",
+    "clean": "tsc --build --clean",
+    "test": "jest",
+    "cdk": "cdk",
+    "lint": "npx eslint -c .eslintrc.js 'lib/**/*.ts'",
+    "lint:fix": "npx eslint --fix -c .eslintrc.js 'lib/**/*.ts'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/exporo/_patterns-infrastructure.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/exporo"
+  },
+  "devDependencies": {
+    "@semantic-release/git": "^10.0.0",
+    "@types/jest": "^26.0.10",
+    "@types/node": "^10.17.27",
+    "@types/uuid": "^8.3.1",
+    "@typescript-eslint/eslint-plugin": "^5.16.0",
+    "aws-cdk": "^2.26.0",
+    "eslint": "^8.11.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^26.4.2",
+    "prettier": "^2.6.0",
+    "semantic-release": "^18.0.0",
+    "ts-jest": "^26.2.0",
+    "ts-node": "^10.8.0",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "@exporo/specifications-events": "^0",
+    "@types/lodash": "^4.14.179",
+    "aws-cdk-lib": "2.26.0",
+    "constructs": "^10.0.0",
+    "json-schema-faker": "^0.5.0-rcv.41",
+    "lodash": "^4.17.21",
+    "source-map-support": "^0.5.16",
+    "uuid": "^8.3.2"
+  }
+}
